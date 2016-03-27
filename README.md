@@ -1,14 +1,6 @@
 # MultiplePagesViewControllerDemo
 MultiplePagesViewController objective-c class for displaying multiple pages with UIPageControl.
 
----
-layout: post
-title: "ios MultiplePagesViewController usage"
-date: 2016-03-27 16:58:54 +0800
-comments: true
-categories: [ios, objective-c]
----
-
 先上截图：
 
 ![multiple_pages_view_controller_demo.gif](multiple_pages_view_controller_demo.gif)
@@ -19,12 +11,12 @@ demo地址：[MultiplePagesViewControllerDemo](https://github.com/hongchaozhang/
 
 首先，创建`MultiplePagesViewController`的实例，并将其和其view加入到需要的view controller 中：
 
-{%highlight objc linenos%}
+```objc
 
 [self.view addSubview:self.multiplePagesViewController.view];
 [self addChildViewController:self.multiplePagesViewController];
 
-{% endhighlight %}
+```
 
 其中，`self.multiplePagesViewController`对应的getter函数如下：
 
