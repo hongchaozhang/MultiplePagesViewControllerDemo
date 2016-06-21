@@ -1,5 +1,5 @@
 # MultiplePagesViewControllerDemo
-MultiplePagesViewController objective-c class for displaying multiple pages with UIPageControl.
+MultiplePagesViewController objective-c and swift class for displaying multiple pages with UIPageControl.
 
 先上截图：
 
