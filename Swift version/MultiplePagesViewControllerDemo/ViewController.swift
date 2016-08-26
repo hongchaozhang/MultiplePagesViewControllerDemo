@@ -9,42 +9,44 @@
 import UIKit
 
 class ViewController: UIViewController, MultiplePagesViewControllerDelegate {
-    
+
     private var multiplePagesViewController = MultiplePagesViewController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+
         self.view.addSubview(self.multiplePagesViewController.view)
         self.addChildViewController(self.multiplePagesViewController)
         self.addDefaultPageViewControllers()
+
+        self.multiplePagesViewController.ownerViewController = self
+
+
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+
         self.multiplePagesViewController.view.frame = self.view.frame
     }
-    
+
     func pageChange(to pageIndex: Int) {
         // do something when page changed in MultiplePagesViewController
         return
     }
-    
+
     private func initializeProperties() {
         self.multiplePagesViewController.view.frame = self.view.frame
         self.multiplePagesViewController.delegate = self
     }
-    
+
     private func addDefaultPageViewControllers() {
         let vcCount = 3
         for i in 0...(vcCount - 1) {
             let svc = SampleViewController(fromString: String(i))
+            svc.ownerViewController = self
             self.multiplePagesViewController.addViewController(svc)
         }
     }
-    
-    
 }
-
